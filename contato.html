@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contato — NOVA</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <a href="index.html" class="logo">
+      <svg class="logo-mark" width="32" height="32" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#4D7FFF"/>
+            <stop offset="1" stop-color="#8B6BFF"/>
+          </linearGradient>
+        </defs>
+        <rect x="1" y="1" width="38" height="38" rx="10" fill="#131825" stroke="url(#g1)" stroke-width="1.5"/>
+        <path d="M12 28V12L28 28V12" stroke="url(#g1)" stroke-width="3.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <span class="logo-text">NOVA<span>.</span></span>
+    </a>
+    <nav class="top-nav">
+      <a href="index.html">Início</a>
+      <a href="sobre.html">Sobre</a>
+      <a href="servicos.html">Serviços</a>
+      <a href="contato.html" class="active">Contato</a>
+      <a href="autor.html">Projetado por</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <span class="eyebrow">Fale conosco</span>
+      <h1>Conte um pouco sobre seu projeto.</h1>
+      <p class="lead">Este formulário é uma simulação — não envia dados reais a nenhum servidor.</p>
+    </section>
+
+    <section class="section">
+      <form class="contact-form" id="contactForm">
+        <div class="field">
+          <label for="nome">Nome</label>
+          <input type="text" id="nome" placeholder="Seu nome completo" required>
+        </div>
+        <div class="field">
+          <label for="email">E-mail</label>
+          <input type="email" id="email" placeholder="seu@email.com" required>
+        </div>
+        <div class="field">
+          <label for="mensagem">Mensagem</label>
+          <textarea id="mensagem" rows="5" placeholder="Descreva brevemente o que você precisa" required></textarea>
+        </div>
+        <button type="button" class="btn-primary" id="sendBtn">Enviar mensagem</button>
+        <p class="form-status" id="formStatus">Mensagem simulada enviada. Em um projeto real, isso seria conectado a um backend ou serviço de e-mail.</p>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <span>© 2026 NOVA Soluções Digitais — Projeto fictício para fins de portfólio.</span>
+    <span>Feito com HTML, CSS &amp; JS</span>
+  </footer>
+
+  <script>
+    const btn = document.getElementById('sendBtn');
+    const status = document.getElementById('formStatus');
+    const form = document.getElementById('contactForm');
+
+    btn.addEventListener('click', () => {
+      if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
+      }
+      status.style.display = 'block';
+      form.reset();
+    });
+  </script>
+
+</body>
+</html>
